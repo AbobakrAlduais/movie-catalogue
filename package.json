@@ -5,12 +5,10 @@
   "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng build -op dist -w",
-    "build": "ng build && nodemon server.js",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
+    "start": "node server.js",
+    "build": "ng build",
     "postinstall": "ng build --aot -prod"
+
   },
   "engines": {
   "node": "8.9.3",
