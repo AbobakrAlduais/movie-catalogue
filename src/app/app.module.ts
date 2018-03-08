@@ -4,6 +4,7 @@ import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlashMessagesModule } from 'ngx-flash-messages';
+// import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';

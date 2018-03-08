@@ -45,3 +45,10 @@ router.get('/search', (req,res) => {
     })
     .catch (error => console.log(error));
 });
+
+// router.put('/edit/:id', (req, res) => {
+//   Idea.findOne({_id:req.params.id})
+//     .then(movie => {
+
+//     })
+// })

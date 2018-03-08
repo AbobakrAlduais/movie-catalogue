@@ -27,6 +27,7 @@ export class MyMoviesComponent implements OnInit {
   filter(selectedCategory) {
     if (selectedCategory !== 'All Movies') {
       const toLower = selectedCategory.toLowerCase();
+      console.log('toLower',toLower)
       this.category = toLower;
       this.selectors = [];
       this.allMovies.forEach(movie => {
@@ -34,6 +35,7 @@ export class MyMoviesComponent implements OnInit {
           this.selectors.push(movie[toLower]);
         }
       });
+      console.log(this.selectors)
     }  else {
       this.selectors = [];
       this._moviesService.myMovies(this.userId).subscribe((data) => {
