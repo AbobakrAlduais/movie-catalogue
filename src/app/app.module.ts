@@ -4,7 +4,6 @@ import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlashMessagesModule } from 'ngx-flash-messages';
-import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
@@ -56,7 +55,6 @@ const ROUTES = [
     FormsModule,
     HttpModule,
     FlashMessagesModule,
-    MaterializeModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
