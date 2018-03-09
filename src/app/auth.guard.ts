@@ -7,6 +7,7 @@ export class CheckLoggedIn implements CanActivate {
 
 canActivate() {
   if (localStorage.getItem('com.moviecatalogue')) {
+
   return true;
   }
   this.router.navigate(['login']);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckLoggedIn } from './auth.guard';
+
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,10 @@ import { CheckLoggedIn } from './auth.guard';
 })
 export class AppComponent implements OnInit{
   logedIn = false;
-  constructor(private _checkLoggedIn: CheckLoggedIn) { }
+  constructor() { }
 
   ngOnInit() {
-    if (this._checkLoggedIn.canActivate()) {
+    if (localStorage.getItem('com.moviecatalogue')) {
       this.logedIn = true;
     }
   }

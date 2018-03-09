@@ -21,7 +21,7 @@ const ROUTES = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'register'
   },
   {
     path: 'login',
