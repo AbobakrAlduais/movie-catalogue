@@ -31,6 +31,11 @@ router.post('/login', (req, res) => {
 
 // Register prossece
 router.post('/register', (req, res) => {
+  // check if passwor is match
+  if (req.body.password !== req.body.password2) {
+    res.status(401).json('Password dosent match');
+  }
+
   // check if the user alrady registered
   User.findOne({email: req.body.email})
     .then(user =>{

@@ -11,7 +11,7 @@ import { UserService } from '../../user.service';
   templateUrl: './register.component.html'
 })
 export class RegisterComponent {
-
+  isMatch = true;
   constructor(
     private _userService: UserService,
     private flashMessagesService: FlashMessagesService,
@@ -28,5 +28,13 @@ export class RegisterComponent {
       (err) => {
         this.flashMessagesService.show(err.json(), {classes: ['alert', 'alert-danger']});
       });
+  }
+
+   onMatch(f: NgForm ) {
+       if (f.value.password !== f.value.repassword ) {
+        this.isMatch = false;
+       } else {
+        this.isMatch = true;
+       }
   }
 }
