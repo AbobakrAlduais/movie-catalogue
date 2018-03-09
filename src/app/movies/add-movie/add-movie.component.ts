@@ -22,6 +22,7 @@ export class AddMovieComponent  {
     this._moviesService.addMovie(movie).subscribe(
       (data) => {
         this.flashMessagesService.show(`${data.title} Added to your collection`, {classes: ['alert', 'alert-success']});
+        f.resetForm();
         },
       (err) => {
         this.flashMessagesService.show(err.json(), {classes: ['alert', 'alert-danger']});

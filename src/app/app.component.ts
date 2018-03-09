@@ -17,8 +17,7 @@ export class AppComponent implements OnInit{
 
   onLogout() {
     localStorage.clear();
-    console.log(9999999)
-    // localStorage.removeItem('com.userId');
+
   }
 
 }

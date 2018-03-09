@@ -17,7 +17,7 @@ const MovieSchema = new Schema({
   actor: {
     type: String
   },
-  image: {
+  poster: {
     type: String
   },
   date: {

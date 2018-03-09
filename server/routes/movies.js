@@ -13,7 +13,7 @@ router.post('/add', (req, res) => {
     genre: req.body.genre,
     user: req.body.userId,
     actor: req.body.actor,
-    image: req.body.image
+    poster: req.body.poster
   };
 
   new Movie(newMovie)

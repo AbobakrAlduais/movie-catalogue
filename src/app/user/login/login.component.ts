@@ -22,7 +22,7 @@ export class LoginComponent  {
         localStorage.setItem('com.moviecatalogue', JSON.stringify(data.token));
         localStorage.setItem('com.userId', JSON.stringify(data.id));
         this.router.navigate(['/movies/add']);
-        this.flashMessagesService.show('you now loged in ', {classes: ['alert', 'alert-success']});
+        location.reload();
         },
       (err) => {
         this.flashMessagesService.show(err.json(), {classes: ['alert', 'alert-danger']});
