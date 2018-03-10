@@ -24,6 +24,7 @@ export class RegisterComponent {
         localStorage.setItem('com.userId', JSON.stringify(data.id));
         this.router.navigate(['/movies/add']);
         this.flashMessagesService.show('you now regisrtred and can log in', {classes: ['alert', 'alert-success']});
+        location.reload();
         },
       (err) => {
         this.flashMessagesService.show(err.json(), {classes: ['alert', 'alert-danger']});
