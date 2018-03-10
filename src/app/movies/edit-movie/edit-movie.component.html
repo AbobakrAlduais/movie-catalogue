@@ -1,0 +1,29 @@
+<div class="countainer w-75 ">
+  <ngx-flash-messages></ngx-flash-messages>
+  <div class="card card-body ml-5">
+    <h3>Add Movie To My Collection</h3>
+    <form #f="ngForm" (ngSubmit)="onEdit(movie)" ngNativeValidate>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="movie.title" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="genre">Genre</label>
+          <input type="text" class="form-control" name="genre" [(ngModel)]="movie.genre" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="actor">Actor</label>
+          <input type="text" class="form-control" name="actor" [(ngModel)]="movie.actor">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="title">PosterURL</label>
+          <input type="text" class="form-control" name="poster" [(ngModel)]="movie.poster">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary pull-right">Edit</button>
+    </form>
+  </div>
+</div>

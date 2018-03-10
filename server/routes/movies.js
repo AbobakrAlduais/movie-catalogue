@@ -23,6 +23,7 @@ router.post('/add', (req, res) => {
     });
 });
 
+// Get All for the user
 router.get('/allMovies/:id', (req, res) => {
   Movie.find({user: req.params.id})
     .sort({date: 'desc'})
@@ -32,6 +33,7 @@ router.get('/allMovies/:id', (req, res) => {
     .catch( error => console.log(error));
 });
 
+// Filter movie
 router.get('/search', (req,res) => {
   const category = req.query.category;
   const selector = req.query.selector;
@@ -46,9 +48,35 @@ router.get('/search', (req,res) => {
     .catch (error => console.log(error));
 });
 
-// router.put('/edit/:id', (req, res) => {
-//   Idea.findOne({_id:req.params.id})
-//     .then(movie => {
+// get one movie
+router.get('/getMovie/:id', (req, res) => {
+  Movie.findOne({_id: req.params.id})
+    .then(movie => {
+      res.json(movie);
+    })
+    .catch(err => res.json(err));
+});
 
-//     })
-// })
+// edit movie
+router.put('/edit/:id', (req, res) => {
+  Movie.findOne({_id:req.params.id})
+    .then(movie => {
+      movie.title = req.body.title;
+      movie.actor = req.body.actor;
+      movie.poster = req.body.poster;
+      movie.genre =req.body.genre;
+
+      movie.save();
+    }).then(() => {
+      res.json('movie updated');
+    }).catch(() => res.json('movie did not update'));
+});
+
+// delete movie
+router.delete('/delete/:id', (req, res) => {
+  Movie.remove({_id: req.params.id})
+    .then(() => {
+      res.json('movie deleted');
+    })
+    .catch( err =>  console.log(err));
+});

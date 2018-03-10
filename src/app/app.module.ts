@@ -4,7 +4,7 @@ import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlashMessagesModule } from 'ngx-flash-messages';
-// import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
@@ -15,13 +15,14 @@ import { AddMovieComponent } from './movies/add-movie/add-movie.component';
 import { MoviesService } from './movies.service';
 import {HttpClientModule} from '@angular/common/http';
 import { CheckLoggedIn } from './auth.guard';
+import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 
 // Define the routes
 const ROUTES = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'register'
+    redirectTo: 'login'
   },
   {
     path: 'login',
@@ -37,6 +38,11 @@ const ROUTES = [
     canActivate: [CheckLoggedIn]
   },
   {
+    path: 'movies/edit/:id',
+    component: EditMovieComponent,
+    canActivate: [CheckLoggedIn]
+  },
+  {
     path: 'mymovies',
     component: MyMoviesComponent,
     canActivate: [CheckLoggedIn]
@@ -49,7 +55,8 @@ const ROUTES = [
     LoginComponent,
     RegisterComponent,
     MyMoviesComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    EditMovieComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +64,7 @@ const ROUTES = [
     HttpModule,
     FlashMessagesModule,
     HttpClientModule,
+    ModalModule.forRoot(),
     RouterModule.forRoot(ROUTES)
   ],
   providers: [UserService, MoviesService, CheckLoggedIn],

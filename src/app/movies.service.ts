@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {HttpClient} from '@angular/common/http'
 
 @Injectable()
 export class MoviesService {
 
-  constructor(private http: Http, private httpClient: HttpClient) { }
+  constructor(private http: Http) { }
 
   addMovie(movie) {
     return this.http.post('/movies/add', movie).map(res => {
@@ -23,6 +22,18 @@ export class MoviesService {
 
     return this.http.get(`/movies/search/?${query}`
     ).map(res => res.json());
+  }
+
+  deleteMovie(id) {
+    return this.http.delete (`/movies/delete/${id}`).map(res => res.json());
+  }
+
+  getMovie(id) {
+    return this.http.get(`movies/getMovie/${id}`).map(res => res.json());
+  }
+
+  onEdit(id, movie) {
+    return this.http.put(`movies/edit/${id}`, movie).map(res => res.json());
   }
 
 }

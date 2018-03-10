@@ -18,10 +18,10 @@
         <li *ngIf="logedIn" class="nav-item">
           <a href="/login" class="nav-link" (click)="onLogout()">Logout</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!logedIn" class="nav-item">
           <a href="/login" class="nav-link">Login</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!logedIn" class="nav-item">
           <a href="/register" class="nav-link">Register</a>
         </li>
       </ul>
