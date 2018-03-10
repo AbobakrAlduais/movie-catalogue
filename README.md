@@ -5,12 +5,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Requirements:
 
 Nodejs
+
 MongoDB
 
 ## Code scaffolding
 clone this repo on your device
 
 In your terminal, run "npm install"
+
 run  npm start
 ## Build
 
