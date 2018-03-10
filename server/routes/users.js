@@ -32,7 +32,7 @@ router.post('/login', (req, res) => {
 // Register prossece
 router.post('/register', (req, res) => {
   // check if passwor is match
-  if (req.body.password !== req.body.password2) {
+  if (req.body.password !== req.body.repassword) {
     res.status(401).json('Password dosent match');
   }
 
