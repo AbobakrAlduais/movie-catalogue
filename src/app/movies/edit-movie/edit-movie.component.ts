@@ -11,7 +11,7 @@ import { MoviesService } from '../../movies.service';
 })
 export class EditMovieComponent implements OnInit {
   private sub;
-  movie: Object = { };
+  movie = {title: '', genre: '', actor: '', poster: '' };
   id: String;
   constructor(
     private _moviesService: MoviesService,
